@@ -34,6 +34,8 @@ function Section1() {
 
   return (
     <div className="App">
+
+      <p>##If there is any delay in showing the data then please wait as some time there might be some problem in api... ##  </p>
       <input
         type="text"
         className="text"
