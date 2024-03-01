@@ -1,0 +1,39 @@
+*{
+    background-color: rgb(210, 245, 255);
+
+}
+.btn{
+
+    padding: 18px;
+    margin: 6px;
+    height: 70px;
+    background-color: rgb(84, 185, 212);
+    color: white;
+    /* border-radius: 20px; */
+
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: rgb(104, 104, 247);
+}
+
+.text{
+    padding: 8px;
+    width: 400px;
+    height: 50px;
+    /* border-radius: 20px; */
+}
+.name{
+    border: 2px;
+    background-color: rgb(170, 170, 248);
+    /* box-sizing: border-box; */
+    padding: 30px;
+
+}
+
+.table1{
+    text-align: left;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
