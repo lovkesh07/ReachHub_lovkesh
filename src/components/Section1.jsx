@@ -24,7 +24,6 @@ function Section1() {
       const response = await axios.get(
         `https://lichess.org/api/games/user/${username}`
       );
-      //   const response = JSON.stringify(responseres, null, 2)
       console.log(response);
       setGames(response.data);
     } catch (error) {
@@ -34,8 +33,10 @@ function Section1() {
 
   return (
     <div className="App">
-
-      <p>##If there is any delay in showing the data then please wait as some time there might be some problem in api... ##  </p>
+      <p>
+        ##If there is any delay in showing the data then please wait as some
+        time there might be some problem in api... ##{" "}
+      </p>
       <input
         type="text"
         className="text"
@@ -77,7 +78,6 @@ function Section1() {
                 <th>bullet</th>
                 <td>{profile.perfs.bullet.games}</td>
                 <td>{profile.perfs.bullet.prog}</td>
-                {/* <td>{profile.perfs.blitz.prov}</td> */}
                 <td>{profile.perfs.bullet.rating}</td>
                 <td>{profile.perfs.bullet.rd}</td>
               </tr>
@@ -86,7 +86,6 @@ function Section1() {
                 <th>correspondence</th>
                 <td>{profile.perfs.correspondence.games}</td>
                 <td>{profile.perfs.correspondence.prog}</td>
-                {/* <td>{profile.perfs.blitz.prov}</td> */}
                 <td>{profile.perfs.correspondence.rating}</td>
                 <td>{profile.perfs.correspondence.rd}</td>
               </tr>
@@ -95,7 +94,6 @@ function Section1() {
                 <th>classical</th>
                 <td>{profile.perfs.classical.games}</td>
                 <td>{profile.perfs.classical.prog}</td>
-                {/* <td>{profile.perfs.blitz.prov}</td> */}
                 <td>{profile.perfs.classical.rating}</td>
                 <td>{profile.perfs.classical.rd}</td>
               </tr>
@@ -104,7 +102,6 @@ function Section1() {
                 <th>rapid</th>
                 <td>{profile.perfs.rapid.games}</td>
                 <td>{profile.perfs.rapid.prog}</td>
-                {/* <td>{profile.perfs.blitz.prov}</td> */}
                 <td>{profile.perfs.rapid.rating}</td>
                 <td>{profile.perfs.rapid.rd}</td>
               </tr>
@@ -113,10 +110,10 @@ function Section1() {
         </div>
       )}
 
-{games.length > 0 && (
+      {games.length > 0 && (
         <div>
           <h2>Game History</h2>
-          <table className='table2'>
+          <table className="table2">
             <thead>
               <tr>
                 <th>Moves</th>
@@ -130,7 +127,11 @@ function Section1() {
                 <tr key={index}>
                   <td>{game.moves}</td>
                   <td>{game.status}</td>
-                  <td>{game.players.black.userId === username ? game.players.white.userId : game.players.black.userId}</td>
+                  <td>
+                    {game.players.black.userId === username
+                      ? game.players.white.userId
+                      : game.players.black.userId}
+                  </td>
                   <td>{new Date(game.createdAt).toLocaleString()}</td>
                 </tr>
               ))}
